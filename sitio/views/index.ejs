@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ETIQUETAS META PARA CONFIGURAR LA VISUALIZACIÓN DEL LA PAGINA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= title %>
+    </title>
+    <!-- ETIQUETAS LINK PARA VINCULAR CON ONTAWESOME Y BOOTSTRAP-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+
+    <!--HEADER: CABECERA Y MENÚ DE NAVEGACIÓN-->
+
+    <header class="container-fluid">
+
+        <!--caja contenedora de boostrap-->
+        <div class="container">
+
+            <!--caja que contiene el logotipo, el buscador y botón con un link-->
+            <div class="row">
+
+                <!--caja que contiene el logotipo-->
+                <div class="col-5 col-md-2 col-lg-2 logo">
+                    <a href=""><img src="/images/logo-mercado-liebre.svg " alt=" "></a>
+                </div>
+
+                <!--caja que contiene el formulario-->
+                <div class="col-7 col-md-6 col-lg-6">
+                    <!--<form action=" ">
+                        <input type="text " placeholder="Buscar productos, marcas y más ">
+                        <button><i class="fas fa-search "></i></button>
+                    </form>-->
+                    <form action="" method="get" class="search-form">
+                        <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
+                        <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <!--caja que contiene el link-->
+                <div class="col-12 col-md-4 col-lg-4 cuotas">
+                    <a href=" "><i class="fas fa-hand-holding-usd"></i> Comprá en cuotas y sin tarjeta de crédito</a>
+                </div>
+
+                <!--finaliza el div.row-->
+            </div>
+
+            <!--barra de navegación-->
+            <nav class="navbar-expand-md">
+
+                <!--boton para que desplegar el menu  en caso que el viewport sea tamaño movil-->
+                <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars "></i></button>
+
+                <!--barra de menu que aparece a partir de la vesión de tablet-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!--barra de menu izquierdo-->
+                    <ul class="menu navbar-nav mr-auto">
+                        <li>
+                            <a href=" ">Ofertas</a>
+                        </li>
+                        <li>
+                            <a href=" ">Tiendas Oficiales</a>
+                        </li>
+                        <li>
+                            <a href=" ">Vender</a>
+                        </li>
+                        <li>
+                            <a href=" ">Ayuda</a>
+                        </li>
+                    </ul>
+
+                    <!--barra de menu: login y registro-->
+                    <ul class="usuario navbar-nav">
+                        <li>
+                            <a href=" ">Creá tu cuenta <i class="far fa-address-card "></i></a>
+                        </li>
+                        <li>
+                            <a href=" ">Ingresá <i class="fas fa-sign-in-alt "></i></a>
+                        </li>
+                        <li>
+                            <a href=" ">Mis compras <i class="fas fa-shopping-basket "></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!--finaliza caja contenedora del menu-->
+            </nav>
+        </div>
+        <!--finaliza caja contenedora bootstrap-->
+    </header>
+
+    <!--SECCIÓN: BANNER-->
+    <section class="banner ">
+        <img src="images/img-home-banner.jpg " alt=" ">
+    </section>
+
+    <!--SECCIONES: PRODUCTOS-->
+
+    <!--caja contendedora de bootstrap con padding superior e inferior de 5 (escala de boostrap)-->
+    <div class="container py-5">
+
+        <!--SECCIÓN: PRODUCTOS ULTIMA VISITA-->
+        <section>
+
+            <!--caja que contiene todos los productos de la ultima visita-->
+            <div class="row productos">
+
+                <!--caja que contiene el titulo de la sección-->
+                <div class="titulo col-12">
+                    <h2>
+                        Basado en tu última visita
+                    </h2>
+                </div>
+
+                <%visitada.forEach(producto => {  %>
+    
+                <!--caja de la grilla de bootstrap-->
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <!--caja que muestra la información del producto-->
+                    <div class="contenido">
+
+                        <!--ETIQUETA SEMANTICA-->
+                        <figure>
+                            <img src="images/products/<%=producto.image%>  " alt=" ">
+                        </figure>
+
+                        <!--informacion-->
+                        <article>
+                            <!--precio-->
+                            <h2>$6.770</h2>
+                            <!--descuento-->
+                            <span>40% OFF</span>
+                            <!--nombre del producto ??-->
+                            <p>Cafetera Moulinex Dolce Gusto</p>
+                            <!--icono de envío-->
+                            <i class="fas fa-truck "></i>
+                        </article>
+
+                        <!--finaliza contenido-->
+                    </div>
+                    <!--finaliza caja de grilla de boostrap-->
+                </div>
+
+                <% }); %> 
+
+                <!--finaliza el div.row-->
+            </div>
+
+            <!--FINALIZA SECCIÓN ULTIMA VISITA-->
+        </section>
+
+        <!--SECCIÓN: PRODUCTOS OFERTAS-->
+        <section>
+
+            <!--caja que contiene todos los productos de la ultima visita-->
+            <div class="row productos">
+
+                <!--caja que contiene el titulo de la sección-->
+                <div class="titulo col-12">
+                    <h2>
+                        Ofertas de la semana
+                    </h2>
+                </div>
+    
+<% oferta.forEach(producto => { %>
+    
+
+                <!--caja de la grilla de bootstrap-->
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <!--caja que muestra la información del producto-->
+                    <div class="contenido">
+
+                        <!--ETIQUETA SEMANTICA-->
+                        <figure>
+                            <img src="images/products/<%=producto.image%> " alt=" ">
+                        </figure>
+
+                        <!--informacion-->
+                        <article>
+                            <!--precio-->
+                            <h2> $<%=producto.price%></h2>
+                            <!--descuento-->
+                            <span>40% OFF</span>
+                            <!--nombre del producto ??-->
+                            <p>Cafetera Moulinex Dolce Gusto</p>
+                            <!--icono de envío-->
+                            <i class="fas fa-truck "></i>
+                        </article>
+
+                        <!--finaliza contenido-->
+                    </div>
+                    <!--finaliza caja de grilla de boostrap-->
+                </div>
+                       <% });  %>  
+
+                <!--finaliza el div.row-->
+            </div>
+
+            <!--FINALIZA SECCCIÓN OFERTAS-->
+        </section>
+
+    </div>
+
+    <!--FOOTER: PIE DE PAGINA-->
+    <footer class="container-fluid">
+
+        <!--caja con el contenido principal de footer-->
+        <div class="row footer">
+
+            <!--contiene pago con tarjeta-->
+            <div class="col-12 col-lg-4">
+                <article>
+                    <i class="fas fa-credit-card "></i>
+                    <h4>Pagá con tarjeta o en efectivo</h4>
+                    <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!
+                    </p>
+                </article>
+            </div>
+
+            <!--contiene envio gratis-->
+            <div class="col-12 col-lg-4">
+                <article>
+                    <i class="fas fa-gift "></i>
+                    <h4>Envío gratis desde $ 1.999</h4>
+                    <p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.
+                    </p>
+                </article>
+            </div>
+
+            <!--contiene seguridad-->
+            <div class="col-12 col-lg-4">
+                <article>
+                    <i class="fas fa-user-shield "></i>
+                    <h4>Seguridad, de principio a fin
+                    </h4>
+                    <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegido.
+                    </p>
+                </article>
+            </div>
+
+            <!--contiene copyright-->
+            <div class="col-12">
+                <p class="copyright">Copyright © 1999-2019 MercadoLiebre S.R.L.</p>
+            </div>
+        </div>
+        <!--finaliza div.row-->
+
+    </footer>
+    <!--FINALIZA FOOTER: PIE DE PAGINA-->
+    </div>
+
+    <!--scripts de bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+</body>
+
+</html>
